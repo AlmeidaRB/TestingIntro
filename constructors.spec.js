@@ -50,27 +50,52 @@ function expect(expectation) {
 // Write Constructors HERE
 
 // Write Constructors HERE
-function Human (name) {
-  this.name = name;
-  this.feed = function (pet) {
+
+//Calvin's Version
+
+function Human (spec) {
+  var options = spec || {};
+  this.isCool = String(options.isCool) === "true" || (options.isCool === undefined) ? true : false;
+  console.log(this.Cool);
+
+  this.pet = function(pet) {
+    this.mood = "happy";
+    pet.mood = "happy";
   }
-  this.mood= "happy";
-  this.pet = function (pet) {
-
+  this.feed = function(pet) {
+    pet.isHungry = false;
   }
-  this.isCool = false;
-
-  }
-
-function Pet (name) {
-  this.name = name;
-  this.color = "golden";
-  this.isHungry= false;
-  this.mood = "happy";
-
-//cool is not passing
-
 }
+
+  function Pet(spec) {
+    var options = spec || {};
+    this.mood = spec.mood || "unknown";
+    this.isHungry = spec.isHungry || true;
+    this.color = spec.color || "unknown";
+    this.name = spec.name || "unknown";
+
+  }
+
+//My version
+  //
+  // function Human (name) {
+  //   this.name = name;
+  //   this.feed = function (pet) {
+  //   }
+  //   this.mood= "happy";
+  //   this.pet = function (pet) {
+  //
+  //   }
+  //   this.isCool = false;
+  //
+  //   }
+  //
+  // function Pet (name) {
+  //   this.name = name;
+  //   this.color = "golden";
+  //   this.isHungry= false;
+  //   this.mood = "happy";
+//cool is not passing
 
 
 /* instances defined for unwritten constructors
