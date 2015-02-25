@@ -67,16 +67,10 @@ function Pet (name) {
   this.color = "golden";
   this.isHungry= false;
   this.mood = "happy";
-  //this.owner = calvin;
+
+//cool is not passing
 
 }
-
-
-
-
-
-
-
 
 
 /* instances defined for unwritten constructors
